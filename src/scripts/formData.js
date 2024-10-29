@@ -1,38 +1,35 @@
-export const INPUT_TYPES = {
-  checkbox: "checkbox",
-  input: "input",
+import { useState } from "react";
+
+ export const USER_DETAILS = {
   email: "email",
-  select: "select",
-  text: "text",
+  firstName: "first-name",
+  lastNAme: "last-name",
+  phone: "phone",
+};
+export const INITIAL_STATE = {
+  [USER_DETAILS.email]: "john@doe.com",
+  [USER_DETAILS.firstName]: "john",
+  [USER_DETAILS.lastNAme]: "Doe",
+  [USER_DETAILS.phone]: "7876767667",
 };
 
-const FORM_FIELDS = {
-  userdetails: {
-    address: "address",
-    email: "email",
-    hobbies: "hobbies",
-    agree: "agree",
+export const USER_DETAILS_FORM_ELEMENTS = [
+  {
+    name: USER_DETAILS.firstName,
+    placeholder: "enter your first name",
   },
-};
-export const { userdetails: USER_DETAILS_NAMES } = FORM_FIELDS;
-const USER_DETAILS_VALUES = {
-  [USER_DETAILS_NAMES.address]: "ggg",
-  [USER_DETAILS_NAMES.email]: "",
-  [USER_DETAILS_NAMES.agree]: false,
-  [USER_DETAILS_NAMES.hobbies]: [],
-};
-
-const FORM_DATA = {
-  getUserFormFields: () => {
-    return [
-      {
-        name: USER_DETAILS_NAMES.address,
-        type: INPUT_TYPES.text,
-        containerClassNames: "mb-1 col-md-4",
-        label: "user address",
-      },
-    ];
+  {
+    name: USER_DETAILS.lastNAme,
+    placeholder: "enter your last name",
   },
-};
-
-export const { getUserFormFields: GET_USER_FORM_FIELDS } = FORM_DATA;
+  {
+    name: USER_DETAILS.email,
+    placeholder: "Enter your email",
+    type: "email",
+  },
+  {
+    name: USER_DETAILS.phone,
+    placeholder: "enter your phone ",
+    type: "number",
+  },
+];

@@ -1,59 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
+import { INPUT_TYPES } from "../scripts/formData";
 
-const FormCollection = () => {
-  const [data, setData] = useState([
-    {
-      name: "name",
-      type: "text",
-      label: "address",
-      containerClassNames: "mb-1 col-md-4",
-    },
-  ]);
+// const FormCollection = ({ data }) => {
+//   console.log(data);
+//   return (
+//     <div>
+//       FormCollection
+//       {data.map((useitems, index) => {
+//         const { keylabel, type, name } = useitems;
+//         return (
+//           <div ={index}>
+//             <label>{label}</label>
+//             {type === INPUT_TYPES.password && (
+//               <input type={type} name={name} className="ms-1" />
+//             )}
+//             {type === INPUT_TYPES.email && (
+//               <input type={type} name={name} className="ms-1" />
+//             )}
+
+//             {type !== INPUT_TYPES.password && type !== INPUT_TYPES.email && (
+//               <input type={type} name={name} className="ms-1" />
+//             )}
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// };
+
+const FormCollection = ({ data }) => {
+  console.log(data);
   return (
     <div>
-      {data.map((item, index) => (
-        <>
-          <div key={index} className={item.containerClassNames}>
-            <input type={item.type} name={item.name} />
-            <label>{item.label}</label>
+      {data.map((useItems, index) => {
+        const { label, type, name } = useItems;
+        return (
+          <div key={index}>
+            <label>{label}</label>
+            <input  type={type} name={name} />
           </div>
-        </>
-      ))}
+        );
+      })}
     </div>
   );
 };
 
 export default FormCollection;
-
-// to solve the problem of using document.getElementById again and again to change the value of element we use useState()
-// import React, { useState } from "react";
-
-// const FormCollection =
-//     [
-//     {
-//       name: "name",
-//       type: "text",
-//       label: "address",
-//       containerClassNames: "mb-1 col-md-4",
-//     },
-//   ];
-
-//   // kya dikhana hai Ui page par aur iske upar sare functions ya state like useState or variables banaye jate hain
-
-//    FormCollection.map((useItem, index) => {
-//     const { label, name, type, containerClassNames } = useItem;
-//     return(
-//         <>
-//       <h1>hhjhjjh</h1>
-//       <div key={index} className={containerClassNames}>
-//         <input type={type} name={name} />
-//         <label>{label}</label>
-//       </div>
-//       </>
-//     )
-//   })
-
-//   )
-// };
-
-// export default FormCollection;
