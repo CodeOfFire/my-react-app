@@ -33,11 +33,16 @@ const FormCollection = ({ data }) => {
   return (
     <div>
       {data.map((useItems, index) => {
-        const { label, type, name } = useItems;
+        const { label, type, name, placeholder } = useItems;
         return (
           <div key={index}>
             <label>{label}</label>
-            <input  type={type} name={name} />
+            <input
+              className="ms-2"
+              type={type}
+              name={name}
+              placeholder={placeholder}
+            />
           </div>
         );
       })}

@@ -17,19 +17,23 @@ export const USER_DETAILS_FORM_ELEMENTS = [
   {
     name: USER_DETAILS.firstName,
     placeholder: "enter your first name",
+    label:"First Name"
   },
   {
     name: USER_DETAILS.lastNAme,
     placeholder: "enter your last name",
+    label:"Last Name"
   },
   {
     name: USER_DETAILS.email,
     placeholder: "Enter your email",
     type: "email",
+    label:"Email"
   },
   {
     name: USER_DETAILS.phone,
     placeholder: "enter your phone ",
     type: "number",
+    label:"Phone"
   },
 ];
